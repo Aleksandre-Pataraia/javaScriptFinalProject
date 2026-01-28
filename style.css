@@ -217,6 +217,9 @@ body, html{
     height: 100%;
     width: 100%;
     font-family: mtavruli;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* 1. Header */
@@ -234,7 +237,7 @@ header{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imgs/img1.jpg);
     background-position: center;
     background-size: cover;
-    height: 950px;
+    min-height: 100vh;
     padding-top: 20px;
     width: 100%;
 }
@@ -388,6 +391,52 @@ nav a img{
     flex-flow: row ;
     padding-bottom: 50px;
 }
+
+#fetchapi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #FFA902 3px solid;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+
+#fetchapi h3 {
+    border: #FFA902 2px solid;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #FFA902;
+    color: white;
+}
+
+#fetchapi h4 {
+    border: #082d3d 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #135979;
+    color: white;
+}
+
+#fetchapi p {
+    padding: 10px;
+    border-radius: 100px;
+    color: white;
+}
+
+#fetchapi li{
+    padding-top: 20px;
+    color: #FFA902;
+}
+
+#fetchapi li:hover{
+    scale: 1.25;
+    overflow: hidden;
+    cursor: pointer;
+}
+
 
 #div7{
     display: flex;

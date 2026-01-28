@@ -262,10 +262,24 @@ main{
     gap: 100px;
 }
 
+#mainTitle{
+    text-decoration: none;
+}
+
 #div2_1{
     display: flex;
     flex-direction: row;
-    color: ;
+    gap: 10px;
+}
+#div2_1 a{
+    font-size: 28px;
+    color: white;
+}
+#div2_1 a:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+    transition: 0.3s;
+    color: #FFA902;
 }
 
 #searchbar{

@@ -261,8 +261,38 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    gap: 50px;
+}
 
-    gap: 100px;
+#searchbardiv{
+    display: flex;
+    position: relative;
+    width: 554px;
+}
+
+.suggestions-box {
+    position: absolute;
+    top: 98%;
+    left: 2%;
+    width: 96%;
+    background: white;
+    z-index: 10;
+    border-radius: 0 0 15px 15px;
+    border: black 1px solid;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+.suggestions-box div{
+    background-color: #FFA902;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.suggestions-box div:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #FFA902;
 }
 
 #mainTitle{
@@ -297,6 +327,9 @@ main{
 
 #searchbar:hover{
     cursor: pointer;
+    background-color: #FFA902;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav{
@@ -426,15 +459,27 @@ nav a img{
     color: white;
 }
 
+#fetchapi ul{
+    padding-top: 20px;
+    background-color: #FFA902;
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
 #fetchapi li{
     padding-top: 20px;
-    color: #FFA902;
+    color: white;
 }
 
 #fetchapi li:hover{
     scale: 1.25;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+    left: 100px;
+    font-weight: bolder;
 }
 
 

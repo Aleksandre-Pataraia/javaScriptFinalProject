@@ -75,3 +75,7 @@ searchBar.addEventListener('input', (e) => {
         });
     }
 });
+
+import { initSlider } from './slider.js';
+
+initSlider()

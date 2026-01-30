@@ -482,14 +482,43 @@ nav a img{
     font-weight: bolder;
 }
 
+.slider-container {
+    position: relative;
+    width: 22%;
+    margin: auto;
+    overflow: hidden; 
+}
 
-#div7{
+.slider-track {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1170px;
-    height: 1265px;
-    gap: 30px;
+    transition: transform 0.5s ease-in-out; 
+    gap: 10px;
+}
+
+.slider-track img {
+    width: 100%; 
+    flex-shrink: 0;
+}
+
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 169, 2, 0.8);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.next-btn { 
+    right: var(--zoma_10); 
+}
+.prev-btn { 
+    left: var(--zoma_10); 
 }
 
 #div7_1{

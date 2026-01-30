@@ -4,7 +4,7 @@ export function initSlider() {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     
-    if (!track || !nextBtn || !prevBtn) return; // უსაფრთხოებისთვის
+    if (!track || !nextBtn || !prevBtn) return;
 
     let index = 0;
 
@@ -25,6 +25,5 @@ export function initSlider() {
         track.style.transform = `translateX(-${index * width}px)`;
     }
 
-    // ფანჯრის ზომის შეცვლისას სლაიდერის გასწორება
     window.addEventListener('resize', updateSlider);
 }

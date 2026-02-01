@@ -13,5 +13,71 @@ export function validation(){
         if(passwValue1 === ""){
             errors.passw = "პაროლის ველი არ შეიძლება დარჩეს ცარიელი";
         }
+
+        let passwValue2 = document.getElementById("passw-input2").value;
+        if(passwValue1 !== passwValue2){
+            errors.passw2 = "პაროლები არ ემთხვევა ერთმანეთს";
+        }
+
+        let gender = false;
+        this.querySelectorAll(".gender").forEach((item) =>{
+            if(item.checked){
+                gender = true;
+            }
+        });
+
+        if(!gender){
+            errors.gender = "გთხოვთ აირჩიოთ თქვენი სქესი";
+        }
+
+        let checkAgree = document.getElementById("check").checked;
+        if(!checkAgree){
+            errors.agree = "უნდა დაეთანხმოთ ჩვენს პირობებს";
+        }
+
+        console.log(errors);
+
+        this.querySelectorAll(".error-text").forEach((item) =>{
+            item.innerHTML = " ";
+        });
+        for(let key in errors){
+            console.log(key);
+
+            let errorText = document.getElementById("error-" + key);
+            console.log(errorText);
+
+            if(errorText){
+                errorText.innerText = errors[key];
+                errorText.style.color = "red";
+                errorText.style.fontStyle = "italic";
+                errorText.style.fontSize = "12px";
+            }
+        }
+
+        if(Object.keys(errors).length === 0){
+            this.submit();
+        }
     })
+
+    let emailInput = document.getElementById("email-input");
+    function emailValidation(){
+        let emailValue = document.getElementById("email-input").value;
+        let emailError = document.getElementById("email-error");
+        let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if(pattern.test(emailValue)){
+            emailError.innerText = "თქვენი მეილი ვალიდურია";
+            emailError.style.color = "green";
+        }else{
+            emailError.innerText = "თქვენი მეილი არ არის ვალიდური";
+            emailError.style.color = "red"
+        }
+
+        if(emailValue === ""){
+            emailError.innerText = "";
+        }
+    }
+
+    emailInput.addEventListener("keyup", emailValidation);
+    
 }

@@ -79,3 +79,6 @@ searchBar.addEventListener('input', (e) => {
 import { initSlider } from './slider.js';
 
 initSlider()
+
+import { validation } from './validation.js';
+validation()

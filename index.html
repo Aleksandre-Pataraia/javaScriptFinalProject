@@ -72,29 +72,77 @@
                 </div>
                 <img src="./imgs/img11.png" alt="">
             </div>
-            <div id="div6">
-                <div class="div6_1">
-                    
-                </div>
-                <div class="div6_1">
-                    
-                </div>
-                <div class="div6_1">
-                    
-                </div>
-                <div class="div6_1">
-                    
-                </div>
-                <div class="div6_1">
-                    
-                </div>
-                <div class="div6_1">
-                    
-                </div>
-            </div>
 
             <div id="fetchapi">
                 
+            </div>
+
+            <div id="regDiv">
+                <h2>ჩაწერეთ თქვენი ბლოგი: </h2>
+                <form action="" id="form-validation">
+                    <div>
+                        <input 
+                        type="text"
+                        name="username"
+                        id="username-input"
+                        placeholder="შეიყვანეთ თქვენი სახელი"
+                        style="width: 250px; min-height: 35px;"
+                        >
+                        <p class="error-text" id="error-username"></p>
+                    </div>
+                    <div>
+                        <input 
+                        type="email"
+                        name="email"
+                        id="email-input"
+                        placeholder="შეიყვანეთ თქვენი იმეილი"
+                        style="width: 250px; min-height: 35px;"
+                        >
+                        <p id="emailerror"></p>
+                    </div>
+                    <div>
+                        <input 
+                        type="password"
+                        name="passw"
+                        id="passw-input"
+                        placeholder="შეიყვანეთ თქვენი პაროლი"
+                        style="width: 250px; min-height: 35px;"
+                        >
+                        <p class="error-text" id="error-passw"></p>
+                    </div>
+                    <div>
+                        <input 
+                        type="password"
+                        name="passw2"
+                        id="passw-input2"
+                        placeholder="გაიმეორეთ თქვენი პაროლი"
+                        style="width: 250px; min-height: 35px;"
+                        >
+                        <p class="error-text" id="error-passw2"></p>
+                    </div>
+                    <div>
+                        <input 
+                        type="text"
+                        name="inputText"
+                        id="text-input"
+                        placeholder="შეიყვანეთ თქვენი ბლოგი"
+                        >
+                        <p class="error-text" id="error-username"></p>
+                    </div>
+                    <div>
+                        <input type="radio" class="gender" name="gender" id="male-gender">
+                        <label for="male-gender">კაცი</label>
+                        <input type="radio" class="gender" name="gender" id="female-gender">
+                        <label for="female-gender">ქალი</label>
+                        <p class="error-text" id="error-gender"></p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="check" name="agree">
+                        <label for="agree">ვეთანხმები პირობებს</label>
+                        <p class="error-text" id="error-agree"></p>
+                    </div>
+                    <button type="submit">შესვლა</button>
+                </form>
             </div>
 
             <div class="slider-container">

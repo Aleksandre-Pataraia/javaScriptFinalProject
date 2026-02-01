@@ -419,11 +419,7 @@ nav a img{
     width: 170px;
 }
 
-#div6{
-    display: flex;
-    flex-flow: row ;
-    padding-bottom: 50px;
-}
+
 
 #fetchapi{
     display: flex;
@@ -480,6 +476,40 @@ nav a img{
     position: relative;
     left: 100px;
     font-weight: bolder;
+}
+
+#regDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    padding: 50px;
+    margin: 40px;
+    border: #644303 5px dotted;
+    background-color: #FFA902;
+    justify-content: center;
+}
+
+#regDiv input{
+    border-radius: 20px;
+}
+
+#regDiv button{
+    border-radius: 10px;
+    width: 100px;
+}
+
+#regDiv button:hover{
+    color: #ffffff;
+    background-color: #644303;
+    cursor: pointer;
+}
+
+
+
+#text-input{
+    width: 400px;
+    min-height: 200px;
 }
 
 .slider-container {

@@ -82,3 +82,6 @@ initSlider()
 
 import { validation } from './validation.js';
 validation()
+
+import { showHide } from './validation.js';
+showHide()

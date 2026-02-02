@@ -80,4 +80,37 @@ export function validation(){
 
     emailInput.addEventListener("keyup", emailValidation);
     
+    
+}
+
+export function showHide(){
+    let passwInput = document.getElementById("passw-input");
+    let icon = document.getElementById("icon");
+    
+    icon.addEventListener("click", function(){
+        if(passwInput.type === "password"){
+            passwInput.setAttribute("type", "text");
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        }else{
+            passwInput.setAttribute("type", "password");
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    })
+
+    let passwInput2 = document.getElementById("passw-input2");
+    let icon2 = document.getElementById("icon2");
+    
+    icon2.addEventListener("click", function(){
+        if(passwInput2.type === "password"){
+            passwInput2.setAttribute("type", "text");
+            icon2.classList.remove("fa-eye");
+            icon2.classList.add("fa-eye-slash");
+        }else{
+            passwInput2.setAttribute("type", "password");
+            icon2.classList.remove("fa-eye-slash");
+            icon2.classList.add("fa-eye");
+        }
+    })
 }

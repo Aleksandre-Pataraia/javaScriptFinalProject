@@ -85,3 +85,6 @@ validation()
 
 import { showHide } from './validation.js';
 showHide()
+
+import { arrowUp } from './arrowUp.js';
+arrowUp()

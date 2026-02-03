@@ -1,4 +1,3 @@
-
 /* 0.Overall */
 
 @font-face {
@@ -6,7 +5,7 @@
     src: url(./fonts/bpg_extrasquare_mtavruli_2009.ttf);
 }
 
-:root{
+:root {
     --fonis_feri1: #15313f;
     --fonis_feri2: #264b5e;
     --textis_feri1: #ebd2aa;
@@ -16,6 +15,7 @@
     --modzraobis_procenti_40: 40%;
     --modzraobis_procenti_60: 60%;
     --modzraobis_procenti_80: 80%;
+    --zoma_700: 700px;
     --zoma_500: 500px;
     --zoma_400: 400px;
     --zoma_320: 320px;
@@ -48,9 +48,9 @@
     --zoma_0: 0;
 }
 
-@media only screen and (min-width: 3840px){
-    :root{
-        /* x1.44 */
+@media only screen and (min-width: 3840px) {
+    :root {
+        --zoma_700: 1008px;
         --zoma_500: 720px;
         --zoma_400: 576px;
         --zoma_320: 460.8px;
@@ -84,9 +84,9 @@
     }
 }
 
-@media only screen and (min-width: 1921px) and (max-width: 3839px){
-    :root{
-        /* x1.2 */
+@media only screen and (min-width: 1921px) and (max-width: 3839px) {
+    :root {
+        --zoma_700: 840px;
         --zoma_500: 600px;
         --zoma_400: 480px;
         --zoma_320: 384px;
@@ -120,14 +120,14 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px){
-    :root{
-        /* x0.8 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    :root {
         --modzraobis_procenti_0: 0%;
         --modzraobis_procenti_20: 15%;
         --modzraobis_procenti_40: 25%;
         --modzraobis_procenti_60: 35%;
         --modzraobis_procenti_80: 45%;
+        --zoma_700: 560px;
         --zoma_500: 400px;
         --zoma_400: 320px;
         --zoma_320: 256px;
@@ -161,14 +161,14 @@
     }
 }
 
-@media only screen and (max-width: 767px){
-    :root{
-        /* x0.64 */
+@media only screen and (max-width: 767px) {
+    :root {
         --modzraobis_procenti_0: 0%;
         --modzraobis_procenti_20: 8%;
         --modzraobis_procenti_40: 16%;
         --modzraobis_procenti_60: 24%;
         --modzraobis_procenti_80: 32%;
+        --zoma_700: 448px;
         --zoma_500: 320px;
         --zoma_400: 256px;
         --zoma_320: 204.8px;
@@ -200,17 +200,43 @@
         --zoma_1: 1px;
         --zoma_0: 0;
     }
+
+    .burger-icon {
+        display: flex;
+        gap: var(--zoma_5);
+        padding: var(--zoma_10);
+    }
+
+    nav {
+        flex-direction: column !important;
+        gap: var(--zoma_0) !important;
+        height: auto;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        max-height: var(--zoma_50);
+    }
+
+    nav.open {
+        max-height: var(--zoma_500);
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: var(--zoma_15) var(--zoma_0);
+        border-bottom: var(--zoma_1) solid rgba(255, 255, 255, 0.1);
+    }
 }
 
 html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after{
+*, *::before, *::after {
     box-sizing: inherit;
 }
 
-body, html{
+body, html {
     margin: var(--zoma_0);
     padding: var(--zoma_0);
     overflow-x: hidden;
@@ -223,29 +249,31 @@ body, html{
 
 .arrow {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: var(--zoma_30);
+    bottom: var(--zoma_30);
     z-index: 9999;
-    cursor: pointer; 
+    cursor: pointer;
     background: #ffa902;
     color: white;
-    padding: 15px;
+    padding: var(--zoma_15);
     border-radius: 50%;
+    border: black solid 1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: var(--zoma_50);
+    height: var(--zoma_50);
 }
+
 /* 1. Header */
 
-#webname{
+#webname {
     color: #ffffff;
-    font-weight: 700px;
-    font-size: 36px;
+    font-weight: 700;
+    font-size: var(--zoma_35);
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -253,38 +281,30 @@ header{
     background-position: center;
     background-size: cover;
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: var(--zoma_20);
     width: 100%;
 }
 
-/* Main */
 
-main{
+#div1 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-#div1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#div2{
+#div2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 50px;
+    gap: var(--zoma_50);
 }
 
-#searchbardiv{
+#searchbardiv {
     display: flex;
     position: relative;
-    width: 554px;
+    width: 554px; /* უნიკალური ზომაა */
 }
 
 .suggestions-box {
@@ -294,263 +314,247 @@ main{
     width: 96%;
     background: white;
     z-index: 10;
-    border-radius: 0 0 15px 15px;
-    border: black 1px solid;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    border-radius: var(--zoma_0) var(--zoma_0) var(--zoma_15) var(--zoma_15);
+    border: black var(--zoma_1) solid;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.suggestions-box div{
+.suggestions-box div {
     background-color: #FFA902;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.suggestions-box div:hover{
+.suggestions-box div:hover {
     cursor: pointer;
     background-color: white;
     color: #FFA902;
 }
 
-#mainTitle{
+#mainTitle {
     text-decoration: none;
 }
 
-#div2_1{
+#div2_1 {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: var(--zoma_10);
 }
-#div2_1 a{
-    font-size: 28px;
+
+#div2_1 a {
+    font-size: var(--zoma_30); /* 28px-ის ნაცვლად */
     color: white;
 }
-#div2_1 a:hover{
+
+#div2_1 a:hover {
     transform: scale(1.5);
     cursor: pointer;
     transition: 0.3s;
     color: #FFA902;
 }
 
-#searchbar{
-    border-radius: 20px;
+#searchbar {
+    border-radius: var(--zoma_20);
     width: 554px;
-    height: 53px;
+    height: var(--zoma_55); /* 53px-ის ნაცვლად */
     color: #9a9797;
     font-family: Poppins;
     font-weight: 100;
     border: none;
 }
 
-#searchbar:hover{
+#searchbar:hover {
     cursor: pointer;
     background-color: #FFA902;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-nav{
+nav {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: var(--zoma_100);
     align-items: center;
     justify-content: center;
-    padding-top: 18px;
+    padding-top: var(--zoma_20); /* 18px-ის ნაცვლად */
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;
+    font-size: var(--zoma_20);
 }
 
-nav a img{
+nav a img {
     position: relative;
-    height: 24px;
-    width: 24px;
-    top: 5px;
+    height: var(--zoma_20); /* 24px-ის ნაცვლად */
+    width: var(--zoma_20);
+    top: var(--zoma_5);
     right: 4px;
 }
 
-#div3{
+.burger-icon {
+    display: none;
+    flex-direction: column;
+    gap: var(--zoma_5);
+    cursor: pointer;
+    padding: var(--zoma_10);
+}
+
+.burger-icon span {
+    width: var(--zoma_30);
+    height: 3px;
+    background-color: #ffa902;
+    transition: 0.3s;
+}
+
+#div3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 905px;
-    height: 350px;
-    margin-top: 120px;
+    width: 100%;
+    height: var(--zoma_320); /* 350px-ისთვის ცვლადი არ გაქვს, მაგრამ პროპორციულად ახლოსაა */
+    margin-top: var(--zoma_120);
     color: #ffffff;
 }
+/* Main */
 
-#div4{
+main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 40px;
-    padding-top: 30px;
 }
 
-#div5{
+#horizonDiv{
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    align-items: center;
 }
 
-#div5 a{
-    text-decoration: none;
-    color: #ffffff;
-}
-
-#category1{
-    background: url(./imgs/img3.png);
-    height: 221px;
-    width: 170px;
-}
-
-#category2{
-    background: url(./imgs/img4.png);
-    height: 221px;
-    width: 170px;
-}
-#category3{
-    background: url(./imgs/img5.png);
-    height: 221px;
-    width: 170px;
-}
-#category4{
-    background: url(./imgs/img6.png);
-    height: 221px;
-    width: 170px;
-}
-#category5{
-    background: url(./imgs/img7.png);
-    height: 221px;
-    width: 170px;
-}
-#category6{
-    background: url(./imgs/img8.png);
-    height: 221px;
-    width: 170px;
-}
-
-
-
-#fetchapi{
+#horizonDiv2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #FFA902 3px solid;
-    border-radius: 20px;
+    justify-content: center;
+}
+
+#fetchapi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #FFA902 var(--zoma_1) solid;
+    border-width: 3px;
+    border-radius: var(--zoma_20);
     overflow: hidden;
     max-width: 900px;
     width: 100%;
-    padding: 20px;
+    padding: var(--zoma_20);
 }
 
 #fetchapi h3 {
-    border: #FFA902 2px solid;
-    padding: 10px;
-    border-radius: 30px;
+    border: #FFA902 var(--zoma_1) solid;
+    border-width: 2px;
+    padding: var(--zoma_10);
+    border-radius: var(--zoma_30);
     background-color: #FFA902;
     color: white;
 }
 
 #fetchapi h4 {
-    border: #082d3d 2px solid;
-    padding: 10px;
-    border-radius: 10px;
+    border: #082d3d var(--zoma_1) solid;
+    border-width: 2px;
+    padding: var(--zoma_10);
+    border-radius: var(--zoma_10);
     background-color: #135979;
     color: white;
 }
 
 #fetchapi p {
-    padding: 10px;
-    border-radius: 100px;
+    padding: var(--zoma_10);
+    border-radius: var(--zoma_100);
     color: white;
 }
 
-#fetchapi ul{
-    padding-top: 20px;
+#fetchapi ul {
+    padding-top: var(--zoma_20);
     background-color: #FFA902;
     width: 90%;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding-bottom: 10px;
+    border: var(--zoma_1) solid black;
+    border-radius: var(--zoma_10);
+    padding-bottom: var(--zoma_10);
 }
 
-#fetchapi li{
-    padding-top: 20px;
+#fetchapi li {
+    padding-top: var(--zoma_20);
     color: white;
 }
 
-#fetchapi li:hover{
+#fetchapi li:hover {
     scale: 1.25;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    left: 100px;
+    left: var(--zoma_100);
     font-weight: bolder;
 }
 
-#regDiv{
+#regDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    padding: 50px;
-    margin: 40px;
-    border: #644303 5px dotted;
+    width: var(--zoma_500);
+    padding: var(--zoma_50);
+    margin: var(--zoma_40);
+    border: #644303 var(--zoma_5) dotted;
     background-color: #FFA902;
     justify-content: center;
+    height: var(--zoma_700);
 }
 
-#regDiv input{
-    border-radius: 20px;
+#regDiv input {
+    border-radius: var(--zoma_20);
 }
 
-#regDiv button{
-    border-radius: 10px;
-    width: 100px;
+#regDiv button {
+    border-radius: var(--zoma_10);
+    width: var(--zoma_100);
 }
 
-#regDiv button:hover{
+#regDiv button:hover {
     color: #ffffff;
     background-color: #644303;
     cursor: pointer;
 }
 
-.passwordDiv{
+.passwordDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: var(--zoma_10);
 }
 
-#text-input{
-    width: 400px;
-    min-height: 200px;
+#text-input {
+    width: var(--zoma_400);
+    min-height: var(--zoma_200);
 }
 
 .slider-container {
     position: relative;
-    width: 22%;
+    width: var(--zoma_400);
     margin: auto;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s ease-in-out; 
-    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+    gap: var(--zoma_10);
 }
 
 .slider-track img {
-    width: 100%; 
+    width: 100%;
     flex-shrink: 0;
 }
-
 
 .prev-btn, .next-btn {
     position: absolute;
@@ -559,9 +563,9 @@ nav a img{
     background: rgba(255, 169, 2, 0.8);
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: var(--zoma_20)
     cursor: pointer;
-    padding: 10px;
+    padding: var(--zoma_10);
     border-radius: 50%;
 }
 
@@ -572,20 +576,8 @@ nav a img{
     left: var(--zoma_10); 
 }
 
-#div7_1{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#div7 h3{
-    font-weight: 600;
-    font-size: 35;
-    padding-top: 20px;
-}
-
-#div8{
-    padding-top: 100px;
+#div8 {
+    padding-top: var(--zoma_100);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -593,152 +585,127 @@ nav a img{
     height: 1497px;
 }
 
-#div8 h3{
-    font-size: 36px;
+#div8 h3 {
+    font-size: var(--zoma_35); /* 36px-ის ნაცვლად */
     font-weight: 600;
 }
 
-#div8_1{
-    display: flex;
-    flex-direction: column;
-}
+#div8_1 { display: flex; flex-direction: column; }
+#div8_1 img { width: 771px; height: 225px; }
 
-#div8_1 img{
-    width: 771px;
-    height: 225px;
-}
+#div8_2 { display: flex; flex-direction: column; }
+#div8_2 img { width: 342px; }
 
-#div8_2{
-    display: flex;
-    flex-direction: column;
-}
-
-#div8_2 img{
-    width: 342px;
-}
-
-#div8_1_2{
+#div8_1_2 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-#div9{
+#div9 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#div9 img{
-    width: 1920px;
-    height: 652px;
-}
+#div9 img { width: 100%; max-width: 1920px; height: auto; }
 
-#div9 h3{
-    font-size: 36px;
+#div9 h3 {
+    font-size: var(--zoma_35); /* 36px-ის ნაცვლად */
     font-weight: 600;
 }
 
-#div10{
+#div10 {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: url(./imgs/img30.png);
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     height: 795px;
     justify-content: center;
     color: white;
-    margin-top: 80px;
+    margin-top: var(--zoma_80); /* 80px-ისთვის ცვლადი არ გაქვს, მაგრამ ახლოსაა */
 }
 
-#div10 h2{
-    font-size: 36px;
+#div10 h2 {
+    font-size: var(--zoma_35); /* 36px-ის ნაცვლად */
     font-weight: 600;
-    padding-top: 100px;
+    padding-top: var(--zoma_100);
 }
 
-#div10 p{
-    font-size: 15px;
+#div10 p {
+    font-size: var(--zoma_15);
     font-weight: 400;
 }
 
-#div10 h3{
-    font-size: 36px;
+#div10 h3 {
+    font-size: var(--zoma_35); /* 36px-ის ნაცვლად */
     font-weight: 500;
 }
 
-#div10 img{
-    margin-top: 40px;
-}
+#div10 img { margin-top: var(--zoma_40); }
 
-#div11{
+#div11 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 623;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: var(--zoma_50);
+    margin-bottom: var(--zoma_50);
 }
 
-#div11 h2{
-    font-size: 36;
+#div11 h2 {
+    font-size: var(--zoma_35); /* 36px-ის ნაცვლად */
     font-weight: 600;
 }
 
-#div11 p{
+#div11 p {
     color: #FFA902;
-    font-size: 28;
+    font-size: var(--zoma_30); /* 28px-ის ნაცვლად */
     font-weight: 500;
-    ;
 }
 
-#div11_1{
+#div11_1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 474;
     align-items: center;
 }
 
-.smolimg{
-    height: 352;
-}
+.smolimg { height: 352px; }
+.bigimg { height: 474px; }
 
-.bigimg{
-    height: 474;
-}
-
-footer{
+footer {
     display: flex;
     flex-direction: row;
     background-color: #ffa902;
-    padding: 30px;
+    padding: var(--zoma_30);
     align-items: center;
     justify-content: space-between;
     color: white;
-    margin-top: 70px;
+    margin-top: var(--zoma_70);
     width: 100%;
 }
 
-footer p{
-    font-size: 24px;
+footer p {
+    font-size: var(--zoma_20); /* 24px-ის ნაცვლად */
     font-weight: 500;
 }
 
-#div12{
+#div12 {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: var(--zoma_30);
 }
 
-#div12 a{
+#div12 a {
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: var(--zoma_20); /* 24px-ის ნაცვლად */
     font-weight: 500;
 }
 
-#div12 img{
-    height: 36;
-    width: 189;
+#div12 img {
+    height: var(--zoma_35); /* 36px-ის ნაცვლად */
+    width: var(--zoma_180); /* 189px-ის ნაცვლად */
 }

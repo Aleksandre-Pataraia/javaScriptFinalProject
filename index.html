@@ -45,6 +45,11 @@
                 </div>
                 <img src="./imgs/img1.1.png" alt="">
                 <nav>
+                    <div id="burger-btn" class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <a href="#">მთავარი <i class="fa-solid fa-angle-down"></i></a>
                     <a href="#">პროფილი <i class="fa-solid fa-angle-down"></i></a>
                     <a href="#">კატეგორიები <i class="fa-solid fa-angle-down"></i></a>
@@ -61,110 +66,99 @@
 
         
         <main>
-            <div id="div4">
-                <p style="font-weight: 600; font-size: 36px;">აღმოაჩინეთ კატეგორია</p>
-                <div id="div5">
-                    <img src="./imgs/img9.png" alt="" style="width: 62px; height: 62px;">
-                    <a id="category1" href="#"></a>
-                    <a id="category2" href="#"></a>
-                    <a id="category3" href="#"></a>
-                    <a id="category4" href="#"></a>
-                    <a id="category5" href="#"></a>
-                    <a id="category6" href="#"></a>
-                    <img src="./imgs/img10.png" alt="" style="width: 62px; height: 62px;">
+            <div id="horizonDiv">
+                <div id="fetchapi">
+                    
                 </div>
-                <img src="./imgs/img11.png" alt="">
-            </div>
-
-            <div id="fetchapi">
-                
-            </div>
-
-            <div id="regDiv">
-                <h2>ჩაწერეთ თქვენი ბლოგი: </h2>
-                <form action="" id="form-validation">
-                    <div>
-                        <input 
-                        type="text"
-                        name="username"
-                        id="username-input"
-                        placeholder="შეიყვანეთ თქვენი სახელი"
-                        style="width: 250px; min-height: 35px;"
-                        >
-                        <p class="error-text" id="error-username"></p>
+                <div id="horizonDiv2">
+                    <div id="regDiv">
+                        <h2>ჩაწერეთ თქვენი ბლოგი: </h2>
+                        <form action="" id="form-validation">
+                            <div>
+                                <input 
+                                type="text"
+                                name="username"
+                                id="username-input"
+                                placeholder="შეიყვანეთ თქვენი სახელი"
+                                style="width: 250px; min-height: 35px;"
+                                >
+                                <p class="error-text" id="error-username"></p>
+                            </div>
+                            <div>
+                                <input 
+                                type="email"
+                                name="email"
+                                id="email-input"
+                                placeholder="შეიყვანეთ თქვენი იმეილი"
+                                style="width: 250px; min-height: 35px;"
+                                >
+                                <p id="emailerror"></p>
+                            </div>
+                            <div>
+                                <div class="passwordDiv">
+                                    <input 
+                                    type="password"
+                                    name="passw"
+                                    id="passw-input"
+                                    placeholder="შეიყვანეთ თქვენი პაროლი"
+                                    style="width: 250px; min-height: 35px;"
+                                    >
+                                    <i id="icon" class="fa-solid fa-eye"></i>
+                                </div>
+                                <p class="error-text" id="error-passw"></p>
+                            </div>
+                            <div>
+                                <div class="passwordDiv">
+                                    <input 
+                                    type="password"
+                                    name="passw2"
+                                    id="passw-input2"
+                                    placeholder="გაიმეორეთ თქვენი პაროლი"
+                                    style="width: 250px; min-height: 35px;"
+                                    >
+                                    <i id="icon2" class="fa-solid fa-eye"></i>
+                                </div>
+                                <p class="error-text" id="error-passw2"></p>
+                            </div>
+                            <div>
+                                <input 
+                                type="text"
+                                name="inputText"
+                                id="text-input"
+                                placeholder="შეიყვანეთ თქვენი ბლოგი"
+                                >
+                                <p class="error-text" id="error-username"></p>
+                            </div>
+                            <div>
+                                <input type="radio" class="gender" name="gender" id="male-gender">
+                                <label for="male-gender">კაცი</label>
+                                <input type="radio" class="gender" name="gender" id="female-gender">
+                                <label for="female-gender">ქალი</label>
+                                <p class="error-text" id="error-gender"></p>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="check" name="agree">
+                                <label for="agree">ვეთანხმები პირობებს</label>
+                                <p class="error-text" id="error-agree"></p>
+                            </div>
+                            <button type="submit">შესვლა</button>
+                        </form>
                     </div>
-                    <div>
-                        <input 
-                        type="email"
-                        name="email"
-                        id="email-input"
-                        placeholder="შეიყვანეთ თქვენი იმეილი"
-                        style="width: 250px; min-height: 35px;"
-                        >
-                        <p id="emailerror"></p>
-                    </div>
-                    <div>
-                        <div class="passwordDiv">
-                            <input 
-                            type="password"
-                            name="passw"
-                            id="passw-input"
-                            placeholder="შეიყვანეთ თქვენი პაროლი"
-                            style="width: 250px; min-height: 35px;"
-                            >
-                            <i id="icon" class="fa-solid fa-eye"></i>
+                    <div class="slider-container">
+                        <div class="slider-track" id="sliderTrack">
+                            <img src="./imgs/img12.png" alt="">
+                            <img src="./imgs/img13.png" alt="">
+                            <img src="./imgs/img14.png" alt="">
+                            <img src="./imgs/img15.png" alt="">
                         </div>
-                        <p class="error-text" id="error-passw"></p>
+                        
+                        <button class="prev-btn" id="prevBtn">❮</button>
+                        <button class="next-btn" id="nextBtn">❯</button>
                     </div>
-                    <div>
-                        <div class="passwordDiv">
-                            <input 
-                            type="password"
-                            name="passw2"
-                            id="passw-input2"
-                            placeholder="გაიმეორეთ თქვენი პაროლი"
-                            style="width: 250px; min-height: 35px;"
-                            >
-                            <i id="icon2" class="fa-solid fa-eye"></i>
-                        </div>
-                        <p class="error-text" id="error-passw2"></p>
-                    </div>
-                    <div>
-                        <input 
-                        type="text"
-                        name="inputText"
-                        id="text-input"
-                        placeholder="შეიყვანეთ თქვენი ბლოგი"
-                        >
-                        <p class="error-text" id="error-username"></p>
-                    </div>
-                    <div>
-                        <input type="radio" class="gender" name="gender" id="male-gender">
-                        <label for="male-gender">კაცი</label>
-                        <input type="radio" class="gender" name="gender" id="female-gender">
-                        <label for="female-gender">ქალი</label>
-                        <p class="error-text" id="error-gender"></p>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="check" name="agree">
-                        <label for="agree">ვეთანხმები პირობებს</label>
-                        <p class="error-text" id="error-agree"></p>
-                    </div>
-                    <button type="submit">შესვლა</button>
-                </form>
-            </div>
 
-            <div class="slider-container">
-                <div class="slider-track" id="sliderTrack">
-                    <img src="./imgs/img12.png" alt="">
-                    <img src="./imgs/img13.png" alt="">
-                    <img src="./imgs/img14.png" alt="">
-                    <img src="./imgs/img15.png" alt="">
                 </div>
-                
-                <button class="prev-btn" id="prevBtn">❮</button>
-                <button class="next-btn" id="nextBtn">❯</button>
             </div>
+
             <div id="div8">
                 <h3>უახლესი ბლოგები</h3>
                 <div id="div8_1_2">

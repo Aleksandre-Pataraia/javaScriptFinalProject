@@ -88,3 +88,6 @@ showHide()
 
 import { arrowUp } from './arrowUp.js';
 arrowUp()
+
+import { initBurger } from './burger.js';
+initBurger()

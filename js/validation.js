@@ -19,17 +19,6 @@ export function validation(){
             errors.passw2 = "პაროლები არ ემთხვევა ერთმანეთს";
         }
 
-        let gender = false;
-        this.querySelectorAll(".gender").forEach((item) =>{
-            if(item.checked){
-                gender = true;
-            }
-        });
-
-        if(!gender){
-            errors.gender = "გთხოვთ აირჩიოთ თქვენი სქესი";
-        }
-
         let checkAgree = document.getElementById("check").checked;
         if(!checkAgree){
             errors.agree = "უნდა დაეთანხმოთ ჩვენს პირობებს";

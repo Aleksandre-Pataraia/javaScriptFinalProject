@@ -111,29 +111,25 @@
 
 @media only screen and (max-width: 767px) {
     :root {
-        --modzraobis_procenti_0: 0%;
-        --modzraobis_procenti_20: 8%;
-        --modzraobis_procenti_40: 16%;
-        --modzraobis_procenti_60: 24%;
-        --modzraobis_procenti_80: 32%;
-        --zoma_700: 448px;
-        --zoma_554: 354.56px;
-        --zoma_500: 320px;
-        --zoma_300: 192px;
-        --zoma_200: 128px;
-        --zoma_180: 115.2px;
-        --zoma_120: 76.8px;
-        --zoma_100: 64px;
-        --zoma_70: 44.8px;
-        --zoma_55: 35.2px;
-        --zoma_50: 32px;
-        --zoma_40: 25.6px;
-        --zoma_35: 22.4px;
-        --zoma_30: 19.2px;
-        --zoma_20: 12.8px;
-        --zoma_15: 9.6px;
-        --zoma_10: 6.4px;
-        --zoma_5: 3.2px;
+        --zoma_700: 95vw;  
+        --zoma_554: 90vw;    
+        --zoma_500: 90%;     
+        --zoma_320: 85%;
+        --zoma_300: 80%;
+        --zoma_200: 160px;
+        --zoma_180: 140px;
+        --zoma_120: 100px;
+        --zoma_100: 80px;
+        --zoma_70: 45px;
+        --zoma_55: 35px;
+        --zoma_50: 30px;
+        --zoma_40: 25px;
+        --zoma_35: 22px;
+        --zoma_30: 18px;   
+        --zoma_20: 16px;    
+        --zoma_15: 12px;
+        --zoma_10: 8px;
+        --zoma_5: 4px;
         --zoma_1: 1px;
         --zoma_0: 0;
     }
@@ -176,7 +172,7 @@ html {
 body, html {
     margin: var(--zoma_0);
     padding: var(--zoma_0);
-    overflow-x: hidden;
+    overflow-x:visible;
     width: 100%;
     font-family: mtavruli;
     display: flex;

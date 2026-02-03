@@ -661,7 +661,33 @@ footer p {
     font-weight: 500;
 }
 
-#div12 img {
-    height: var(--zoma_35);
-    width: var(--zoma_180);
+.cookie-container {
+    position: fixed;
+    bottom: -100%; /* თავიდან დამალულია ეკრანის ქვემოთ */
+    left: 0;
+    right: 0;
+    background: #15313f;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    transition: 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+/* კლასი, რომელიც გამოაჩენს ბანერს */
+.cookie-container.active {
+    bottom: 0;
+}
+
+.cookie-container button {
+    background: #ffa902;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }

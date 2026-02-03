@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Aleksandre-Pataraia/javaScriptFinalProject#readme",
   "dependencies": {
-    "axios": "^1.13.4"
+    "axios": "^1.13.4",
+    "js-cookie": "^3.0.5"
   }
 }

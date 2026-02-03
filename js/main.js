@@ -1,3 +1,5 @@
+
+
 let allPosts = [];
 
 fetch('https://dummyjson.com/posts')
@@ -94,3 +96,9 @@ initBurger()
 
 import { accordion } from './accordion.js';
 accordion()
+
+import { localStorageUse } from './localStorage.js';
+localStorageUse()
+
+import { cookiesNotif } from './cookiesNotif.js';
+cookiesNotif()

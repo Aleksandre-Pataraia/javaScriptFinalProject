@@ -10,6 +10,7 @@
     --zoma_700: 700px;
     --zoma_554: 554px;
     --zoma_500: 500px;
+    --zoma_400: 400px;
     --zoma_300: 300px;
     --zoma_200: 200px;
     --zoma_180: 180px;
@@ -26,7 +27,6 @@
     --zoma_10: 10px;
     --zoma_5: 5px;
     --zoma_1: 1px;
-    --zoma_0: 0;
 }
 
 @media only screen and (min-width: 3840px) {
@@ -34,6 +34,7 @@
         --zoma_700: 1008px;
         --zoma_554: 797.76px;
         --zoma_500: 720px;
+        --zoma_400: 576px;
         --zoma_300: 432px;
         --zoma_200: 288px;
         --zoma_180: 259.2px;
@@ -50,7 +51,6 @@
         --zoma_10: 14.4px;
         --zoma_5: 7.2px;
         --zoma_1: 1.44px;
-        --zoma_0: 0;
     }
 }
 
@@ -59,6 +59,7 @@
         --zoma_700: 840px;
         --zoma_554: 664.8px;
         --zoma_500: 600px;
+        --zoma_400: 480px;
         --zoma_300: 360px;
         --zoma_200: 240px;
         --zoma_180: 216px;
@@ -75,7 +76,6 @@
         --zoma_10: 12px;
         --zoma_5: 6px;
         --zoma_1: 1.2px;
-        --zoma_0: 0;
     }
 }
 
@@ -89,6 +89,7 @@
         --zoma_700: 560px;
         --zoma_554: 443.2px;
         --zoma_500: 400px;
+        --zoma_400: 320px;
         --zoma_300: 240px;
         --zoma_200: 160px;
         --zoma_180: 144px;
@@ -105,7 +106,6 @@
         --zoma_10: 8px;
         --zoma_5: 4px;
         --zoma_1: 1px;
-        --zoma_0: 0;
     }
 }
 
@@ -113,7 +113,8 @@
     :root {
         --zoma_700: 95vw;  
         --zoma_554: 90vw;    
-        --zoma_500: 90%;     
+        --zoma_500: 90%;    
+        --zoma_400: 87.5%; 
         --zoma_320: 85%;
         --zoma_300: 80%;
         --zoma_200: 160px;
@@ -131,33 +132,125 @@
         --zoma_10: 8px;
         --zoma_5: 4px;
         --zoma_1: 1px;
-        --zoma_0: 0;
     }
 
-    .burger-icon {
-        display: flex;
-        gap: var(--zoma_5);
-        padding: var(--zoma_10);
+    body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
     }
 
-    nav {
-        flex-direction: column !important;
-        gap: var(--zoma_0) !important;
-        height: auto;
-        overflow: hidden;
-        transition: max-height 0.4s ease-out;
-        max-height: var(--zoma_50);
+    nav{
+        display: none !important;
     }
 
-    nav.open {
-        max-height: var(--zoma_500);
+    #burger-menu {
+        display: block !important;
+        cursor: pointer;
+        height: 27px;
+        width: 27px;
+        margin: 20px; 
+        position: relative;
+        z-index: 1001;
+
+        span,
+        span:before,
+        span:after {
+            background: #fff;
+            display: block;
+            height: 2px;
+            opacity: 1;
+            position: absolute;
+            transition: 0.3s ease-in-out;
+        }
+
+        span:before,
+        span:after {
+            content: '';
+        }
+
+        span:before {
+            left: 0px;
+            top: -10px;
+            width: 27px;
+        }
+
+        span {
+            right: 0px;
+            top: 13px;
+            width: 27px;
+        }
+
+        span:after {
+            left: 0px;
+            top: 10px;
+            width: 27px;
+        }
+
+        .close {
+            span:before {
+                top: 0px;
+                transform: rotate(90deg);
+                width: 27px;
+            }
+
+            span {
+                transform: rotate(-45deg);
+                top: 13px;
+                width: 27px;
+            }
+
+            span:after {
+                top: 0px;
+                left: 0;
+                transform: rotate(90deg);
+                opacity: 0;
+                width: 0;
+            }
+        }
     }
 
-    nav a {
-        width: 100%;
+    #menu {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;    
+        position: fixed;      
+        top: 0;
+        left: 0;
+        width: 100vw;  
+        height: 100vh;           
+        background:  rgba(0, 0, 0, 0.5); 
+        z-index: 1000;           
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%); 
+        transition: all 0.4s ease-in-out;
+    }
+
+    #menu.overlay {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0); 
+    }
+
+    #menu ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
         text-align: center;
-        padding: var(--zoma_15) var(--zoma_0);
-        border-bottom: var(--zoma_1) solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu a {
+        font-size: var(--zoma_35); 
+        margin: var(--zoma_20) 0;
+        display: block;
+        text-decoration: none;
+        color: #FFA902;
+    }
+
+    nav{
+        display: none;
     }
 }
 
@@ -197,6 +290,7 @@ body, html {
     width: var(--zoma_50);
     height: var(--zoma_50);
 }
+
 
 /* 1. Header */
 
@@ -288,7 +382,7 @@ header {
 
 #searchbar {
     border-radius: var(--zoma_20);
-    width: 554px;
+    width: var(--zoma_554);
     height: var(--zoma_55);
     color: #9a9797;
     font-family: Poppins;
@@ -301,6 +395,10 @@ header {
     background-color: #FFA902;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#burger-menu, #menu {
+    display: none;
 }
 
 nav {
@@ -325,20 +423,7 @@ nav a:hover{
     scale: 1.25;
 }
 
-.burger-icon {
-    display: none;
-    flex-direction: column;
-    gap: var(--zoma_5);
-    cursor: pointer;
-    padding: var(--zoma_10);
-}
 
-.burger-icon span {
-    width: var(--zoma_30);
-    height: 3px;
-    background-color: #ffa902;
-    transition: 0.3s;
-}
 
 #div3 {
     display: flex;
@@ -356,18 +441,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#horizonDiv{
-    display: flex;
-    flex-direction: row;
-}
-
-#horizonDiv2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 #fetchapi {
@@ -440,7 +513,7 @@ main {
     border: #644303 var(--zoma_5) dotted;
     background-color: #FFA902;
     justify-content: center;
-    height: var(--zoma_700);
+    height: auto;
 }
 
 #regDiv input {

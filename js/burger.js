@@ -1,12 +1,10 @@
 export function initBurger() {
-    const burgerBtn = document.getElementById('burger-btn');
-    const nav = document.getElementById('main-nav');
+    let burgerMenu = document.getElementById('burger-menu');
 
-    if (burgerBtn && nav) {
-        burgerBtn.addEventListener('click', () => {
-            nav.classList.toggle('open');
-            
-            burgerBtn.classList.toggle('toggle');
-        });
-    }
+    let overlay = document.getElementById('menu');
+
+    burgerMenu.addEventListener('click', function() {
+    this.classList.toggle("close");
+    overlay.classList.toggle("overlay");
+    });
 }

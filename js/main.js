@@ -91,3 +91,6 @@ arrowUp()
 
 import { initBurger } from './burger.js';
 initBurger()
+
+import { accordion } from './accordion.js';
+accordion()
